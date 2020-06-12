@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1241</width>
+    <height>687</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>多机器人覆盖仿真</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QComboBox" name="Algorithm">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>40</y>
+     <width>161</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>基本黄蜂群算法</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>启发式黄蜂群</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>深度优先搜索</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>栈限长dfs</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>队列限长dfs</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>直接轮盘赌</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>40</y>
+     <width>40</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe 宋体 Std L</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>算法</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>80</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>机器人数量</string>
+   </property>
+  </widget>
+  <widget class="PlotWidget" name="Coverage_time">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>110</y>
+     <width>571</width>
+     <height>471</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>50</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>覆盖时间</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Map_ylen">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>470</y>
+     <width>80</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>999</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Map_xlen">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>510</y>
+     <width>80</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>999</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>470</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>横向格子数</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>510</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>纵向格子数</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Make_map">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>610</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>开始制作地图</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Map_filename_write">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>550</y>
+     <width>160</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>550</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>地图文件名</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>120</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>地图文件名</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Map_filename_read">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>120</y>
+     <width>160</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>160</y>
+     <width>160</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>信息素更改参数α</string>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="Alpha">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>160</y>
+     <width>80</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Robot_num">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>80</y>
+     <width>160</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>80</y>
+     <width>120</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>当前仿真次数</string>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="Num_now">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>110</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>150</y>
+     <width>80</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>覆盖时长</string>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="Time_now">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>190</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>330</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>331</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>仿真设置</string>
+   </property>
+   <widget class="QPushButton" name="Simulation">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>340</y>
+      <width>100</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>开始仿真</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="Total_time">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>220</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>999</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>覆盖率要求</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="Window">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>260</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>否</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>是</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>260</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>是否演示</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Cover_ratio">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>300</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>220</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>仿真次数</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>160</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>栈/队列长度len</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="Len">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>180</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>999</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>450</y>
+     <width>331</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>地图绘制</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>430</y>
+     <width>80</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>时间均值</string>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="Stander">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>540</y>
+     <width>200</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>500</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>时间标准差</string>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="Mean">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>470</y>
+     <width>200</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <zorder>groupBox_2</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>Algorithm</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>Coverage_time</zorder>
+  <zorder>label_3</zorder>
+  <zorder>Map_ylen</zorder>
+  <zorder>Map_xlen</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
+  <zorder>Make_map</zorder>
+  <zorder>Map_filename_write</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_8</zorder>
+  <zorder>Map_filename_read</zorder>
+  <zorder>label_9</zorder>
+  <zorder>Alpha</zorder>
+  <zorder>Robot_num</zorder>
+  <zorder>label_13</zorder>
+  <zorder>Num_now</zorder>
+  <zorder>label_14</zorder>
+  <zorder>Time_now</zorder>
+  <zorder>progressBar</zorder>
+  <zorder>label_16</zorder>
+  <zorder>Stander</zorder>
+  <zorder>label_17</zorder>
+  <zorder>Mean</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph/core</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
