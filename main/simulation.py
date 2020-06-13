@@ -418,7 +418,7 @@ def trial(num,robot_num=50,algorithm_id=1,parameter=[],_map_size=(100,100),path=
 #1.黄蜂群 [alpha,beta]
 #2.启发式黄蜂群 [alpha]
 #3.深度优先搜索 [alpha]
-#4.栈限长dfs [alpha,len]
-#5.队列限长dfs [alpha,len]
+#4.队列限长dfs [alpha,len]
+#5.栈限长dfs [alpha,len]
 if __name__ == "__main__":
     main(10,1,[0.1,0],(10,10),'',fps=1.5)
