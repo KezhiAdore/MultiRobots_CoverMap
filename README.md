@@ -13,7 +13,8 @@
 
 ## 关于发布的打包程序
 
-下载地址：[点击下载](https://github.com/KezhiAdore/MultiRobots_CoverMap/releases/tag/v1.0)
+下载地址（推荐）：[单文件版本下载](https://github.com/KezhiAdore/MultiRobots_CoverMap/releases/tag/v1.1)
+下载地址：[多文件版本下载](https://github.com/KezhiAdore/MultiRobots_CoverMap/releases/tag/v1.0)
 
 下载整个release文件夹，运行menu.exe。
 
